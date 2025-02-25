@@ -42,6 +42,7 @@ export default function LovePage() {
 
         if (response.ok) {
             console.log("Email sent successfully!");
+            localStorage.removeItem("username");
         } else {
             console.error("Failed to send email.");
         }
