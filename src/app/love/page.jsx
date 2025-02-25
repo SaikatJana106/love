@@ -59,24 +59,25 @@ export default function LovePage() {
                         className="relative mb-6"
                     >
                         {/* Head */}
-                        <div className="w-24 h-24 bg-yellow-300 rounded-full flex flex-col items-center justify-center relative">
+                        <div className="w-24 h-24 bg-yellow-300  rounded-full flex flex-col items-center justify-center relative">
+                            <div className="absolute inset-0 bg-red-400 opacity-25 mix-blend-multiply rounded-full"></div>
                             {/* Eyes */}
                             <div className="absolute flex space-x-4">
-                                <div className="relative w-8 h-8 bg-white border-2 border-black rounded-full flex items-center justify-center">
-                                    <motion.div
-                                        animate={{ x: eyeBallPosition.x, y: eyeBallPosition.y }}
-                                        transition={{ type: "spring", stiffness: 100 }}
-                                        className="w-3 h-3 bg-black rounded-full"
-                                    ></motion.div>
-                                </div>
-                                <div className="relative w-8 h-8 bg-white border-2 border-black rounded-full flex items-center justify-center">
-                                    <motion.div
-                                        animate={{ x: eyeBallPosition.x, y: eyeBallPosition.y }}
-                                        transition={{ type: "spring", stiffness: 100 }}
-                                        className="w-3 h-3 bg-black rounded-full"
-                                    ></motion.div>
-                                </div>
+                                {[...Array(2)].map((_, index) => (
+                                    <div key={index} className="relative w-8 h-8 bg-white border-2 border-black rounded-full flex items-center justify-center">
+                                        <motion.div
+                                            animate={{ x: eyeBallPosition.x, y: eyeBallPosition.y }}
+                                            transition={{ type: "spring", stiffness: 100 }}
+                                            className="w-3 h-3 bg-black rounded-full relative"
+                                        >
+                                            {/* Sparkling Effect - White Dots */}
+                                            <div className="absolute top-0.5 left-0.5 w-1 h-1 bg-white rounded-full"></div>
+                                            <div className="absolute bottom-0.5 right-0.5 w-0.5 h-0.5 bg-white rounded-full opacity-75"></div>
+                                        </motion.div>
+                                    </div>
+                                ))}
                             </div>
+
                             {/* Arms (Crossed) */}
                             <div className="absolute -bottom-4 flex space-x-2">
                                 <div className="w-6 h-6 bg-yellow-400 rounded-full transform -rotate-45"></div>
