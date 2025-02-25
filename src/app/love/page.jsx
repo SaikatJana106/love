@@ -68,6 +68,12 @@ export default function LovePage() {
                         {/* Head */}
                         <div className="w-24 h-24 bg-yellow-300  rounded-full flex flex-col items-center justify-center relative">
                             <div className="absolute inset-0 bg-red-400 opacity-25 mix-blend-multiply rounded-full"></div>
+
+                            <div className="absolute top-5 flex space-x-6">
+                                {[...Array(2)].map((_, index) => (
+                                    <div key={index} className="w-6 h-7 border-t-2 border-black rounded-full" style={{ transform: "rotate(0deg)" }}></div>
+                                ))}
+                            </div>
                             {/* Eyes */}
                             <div className="absolute flex space-x-4">
                                 {[...Array(2)].map((_, index) => (
@@ -85,10 +91,12 @@ export default function LovePage() {
                                 ))}
                             </div>
 
+                            <div className="absolute bottom-6 w-4 h-4 border-b-2 border-black rounded-full"></div>
+
                             {/* Arms (Crossed) */}
                             <div className="absolute -bottom-4 flex space-x-2">
-                                <div className="w-6 h-6 bg-yellow-400 rounded-full transform -rotate-45"></div>
-                                <div className="w-6 h-6 bg-yellow-400 rounded-full transform rotate-45"></div>
+                                <div className="w-6 h-6 bg-yellow-400 rounded-full transform -rotate-45 border border-gray-900"></div>
+                                <div className="w-6 h-6 bg-yellow-400 rounded-full transform rotate-45 border border-gray-900"></div>
                             </div>
                         </div>
                     </motion.div>
