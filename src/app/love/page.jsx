@@ -38,7 +38,6 @@ export default function LovePage() {
         if (typeof window !== "undefined") {
             localStorage.removeItem("username");
             setName(""); // Clear state
-            setTimeout(() => window.location.reload(), 100); // Reload after a slight delay
         }
 
         const response = await fetch("http://localhost:5000/send-email", {
