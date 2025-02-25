@@ -97,6 +97,7 @@ export default function LovePage() {
 
                         <button
                             onMouseEnter={moveNoButton}
+                            onTouchStart={moveNoButton}
                             style={shouldMove ? { position: "absolute", ...noPosition } : {}}
                             className="px-6 py-2 bg-red-500 text-white rounded text-lg"
                         >
