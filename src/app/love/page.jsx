@@ -21,7 +21,7 @@ export default function LovePage() {
         }
     }, [router]);
 
-    const moveNoButton = (e:any) => {
+    const moveNoButton = (e) => {
         setShouldMove(true);
         const randomX = Math.random() * 80;
         const randomY = Math.random() * 80;
